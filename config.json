@@ -1,7 +1,7 @@
 {
-  "name": "localdatabaseapi",
+  "name": "SkarptW APi",
   "version": "1.0",
-  "slug": "localdatabaseapi",
+  "slug": "SkarptW APi",
   "description": "localdatabase v2 gateway on local database home assistant",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
