@@ -6,16 +6,15 @@ import sys
 from datetime import datetime
 from influxdb import InfluxDBClient
 import json
-with open("/data/options.json", "r") as config_file:
-    config = json.load(config_file)
 
-USERNAME_DATABASE = config.get("USERNAME_DATABASE")
-PASSWORD_DATABASE = config.get("PASSWORD_DATABASE")
-INTERNAL_BACKUP_DATABASE_NAME = config.get("INTERNAL_BACKUP_DATABASE_NAME")
-INTERNAL_DATABASE_NAME = config.get("INTERNAL_DATABASE_NAME")
-DATABASE_IP = config.get("DATABASE_IP")
-measurement = config.get("measurement")
+
 DATABASE_PORT = '8086'
+USERNAME_DATABASE = str(open("config/USERNAME_DATABASE.txt", "r").read()).strip()
+PASSWORD_DATABASE = str(open("config/PASSWORD_DATABASE.txt", "r").read()).strip()
+INTERNAL_BACKUP_DATABASE_NAME = str(open("config/INTERNAL_BACKUP_DATABASE_NAME.txt", "r").read()).strip()
+INTERNAL_DATABASE_NAME = str(open("config/INTERNAL_DATABASE_NAME.txt", "r").read()).strip()
+DATABASE_IP = str(open("config/DATABASE_IP.txt", "r").read()).strip()
+measurement = str(open("config/measurement.txt", "r").read()).strip()
 full_packet_list = []
 def Update_ACK(Packetindex):
     global responsePacket, response2
