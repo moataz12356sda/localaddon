@@ -1,7 +1,7 @@
 {
-  "name": "localaddontoinflux",
+  "name": "localaddon1",
   "version": "1.0",
-  "slug": "localaddontoinflux",
+  "slug": "localaddon1",
   "description": "Local Database v2 gateway on Home Assistant",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
@@ -11,12 +11,8 @@
     "password": ""
   },
   "schema": {
-    "USERNAME_DATABASE": "your_db_username",
-    "PASSWORD_DATABASE": "your_db_password",
-    "INTERNAL_BACKUP_DATABASE_NAME": "backup_db_name",
-    "INTERNAL_DATABASE_NAME": "internal_db_name",
-    "DATABASE_IP": "127.0.0.1",
-    "measurement": "default_measurement"
+    "username": "str",
+    "password": "str"
   },
   "ports": {
     "2000/tcp": 2000
