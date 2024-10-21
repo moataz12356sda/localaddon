@@ -1,23 +1,37 @@
 {
-  "name": "localaddonapi",
+  "name": "localaddontoinflux",
   "version": "1.0",
-  "slug": "localaddonapi",
-  "description": "localdatabase v2 gateway on local database home assistant",
+  "slug": "localaddontoinflux",
+  "description": "Local Database v2 gateway on Home Assistant",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
   "boot": "auto",
-  "options": {},
+  "options": {
+    "username": "",
+    "password": ""
+  },
   "schema": {
-    "username": "str",
-    "password": "str"
+    "USERNAME_DATABASE": "your_db_username",
+    "PASSWORD_DATABASE": "your_db_password",
+    "INTERNAL_BACKUP_DATABASE_NAME": "backup_db_name",
+    "INTERNAL_DATABASE_NAME": "internal_db_name",
+    "DATABASE_IP": "127.0.0.1",
+    "measurement": "default_measurement"
   },
   "ports": {
     "2000/tcp": 2000
   },
+  "ports_description": {
+    "2000/tcp": "API Port for localdatabase add-on"
+  },
   "map": [
     "ssl:rw",
     "backup:rw"
-  ] ,
-  "host_network" : true ,
-  "hassio_api": true
+  ],
+  "host_network": true,
+  "hassio_api": true,
+  "hassio_role": "default",
+  "timeout": 60,
+  "webui": "http://[HOST]:2000",
+  "icon": "icon.png"
 }
